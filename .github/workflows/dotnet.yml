@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: publish
-      run: dotnet publish -c Release -o cargo
+      run: dotnet publish -c Release -o cargo -r linux-x64 --self-contained
       # Deploy to Azure Web apps
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
